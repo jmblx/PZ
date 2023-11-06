@@ -1,6 +1,6 @@
 def get_num(n: str) -> int:
     num = input(f"Введите {n}\n")
-    while type(num) != int:
+    while type(num) is not int:
         try:
             num = int(num)
             return num

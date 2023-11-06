@@ -1,12 +1,12 @@
 """
 Дано целое число N (> 0). Найти произведние 1.1 * 1.2 * 1.3 * (N сомножителей)
 """
-import PZ_3.functions
+import functions
 
 
-N = PZ_3.functions.get_num("целое число N (> 0)")
+N = functions.get_num("целое число N (> 0)")
 while N < 0:
-    N = PZ_3.functions.get_num("целое число N (> 0)")
+    N = functions.get_num("целое число N (> 0)")
 
 res = 0
 
@@ -17,4 +17,4 @@ else:
     for i in range(1, N+1):
         res *= 1 + (0.1 * i)
 
-print(res)
+print(f"произведение 1.1 * 1.2 * 1.3 * ({N} сомножителей) = {res}")
