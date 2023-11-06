@@ -6,8 +6,9 @@
 
 
 def solution(stroka: str) -> str:
-    splited = stroka.split("\")
-    return splited[1] if len(splited) != 1 else "\"
+    splited = stroka.split("\\")
+    return splited[0] if len(splited) != 1 else "\\"
 
 
-print(solution("dsa\dsa\sadqwwq\ewqda"))
+print(solution(r"dsa\dsa1\sadqwwq\ewqda"))
+print(solution(r"dsadqwe"))
