@@ -12,29 +12,15 @@
 """
 
 
-def cant_buy_salt(**kwargs):
-    res = []
-    for shop in kwargs:
-        shop_values = kwargs.get(shop)
-        if "соль" not in shop_values:
-            res.append(shop)
+def check_items(shop_values, items):
+    return all(item in shop_values for item in items)
+
+def cant_buy(items, **kwargs):
+    res = [shop for shop, shop_values in kwargs.items() if not check_items(shop_values, items)]
     print(res)
 
-
-def can_buy_milk_cookie_sugar(**kwargs):
-    res = []
-    for shop in kwargs:
-        shop_values = kwargs.get(shop)
-        if "молоко" in shop_values and "печенье" in shop_values and "сыр" in shop_values:
-            res.append(shop)
-    print(res)
-
-def can_buy_milk_meat(**kwargs):
-    res = []
-    for shop in kwargs:
-        shop_values = kwargs.get(shop)
-        if "молоко" in shop_values and "мясо" in shop_values:
-            res.append(shop)
+def can_buy(items, **kwargs):
+    res = [shop for shop, shop_values in kwargs.items() if check_items(shop_values, items)]
     print(res)
 
 magnit = "молоко, соль, сахар, печенье, сыр".split(", ")
@@ -42,8 +28,11 @@ pyat = "мясо, молоко, сыр".split(", ")
 perekrestok = "молоко, творог, сыр, сахар, печенье".split(", ")
 lenta = "печенье, молоко, сыр".split(", ")
 
-cant_buy_salt(magnit=magnit, pyat=pyat, perekrestok=perekrestok, lenta=lenta)
+cant_buy(
+    ["соль"], magnit=magnit, pyat=pyat,
+    perekrestok=perekrestok, lenta=lenta
+)
 
-can_buy_milk_cookie_sugar(magnit=magnit, pyat=pyat, perekrestok=perekrestok, lenta=lenta)
+can_buy(["молоко", "печенье", "сыр"], magnit=magnit, pyat=pyat, perekrestok=perekrestok, lenta=lenta)
 
-can_buy_milk_meat(magnit=magnit, pyat=pyat, perekrestok=perekrestok, lenta=lenta)
+can_buy(["молоко", "мясо"], magnit=magnit, pyat=pyat, perekrestok=perekrestok, lenta=lenta)

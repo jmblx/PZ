@@ -4,10 +4,12 @@
 
 
 def write_40_chars():
-    stroka = ''
-    for _ in range(1, 41):
-        stroka += 'a'
-    print(stroka)
+    stroka = 'а'
+    # for _ in range(1, 41):
+    #     stroka += 'a'
+    # print(stroka)
+    print(stroka * 40)
+
 
 
 # print(len())
