@@ -5,7 +5,8 @@
 
 
 def solution(S: str):
-    return "".join([f"{s} " for s in S])
+    return " ".join(S)
 
+test_str = 'qwertqwert'
 
-print(solution('qwertqwert'))
+print(f"Исходная строка:\n {test_str}\n Результат:\n {solution(test_str)}")

@@ -13,4 +13,5 @@ def solution(A, N) -> None:
 
 A = [0, 2, 4, 6, 8, 10]
 N = len(A)
+print(f"Изначальный массив:{A}")
 solution(A, N)

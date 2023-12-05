@@ -5,7 +5,7 @@
 '''
 
 
-def solution(K: int, A: list, N: int) -> int:
+def solution(K, A: list, N: int):
     diff = float("infinity")
     best = 0
     for i in A:
@@ -17,5 +17,7 @@ def solution(K: int, A: list, N: int) -> int:
     return best
 
 
-A = [4, 5, 6, 10, 15]
-print(solution(7, A, len(A)))
+A = [4, 5, 6, 7.25, 10, 15]
+K = 7
+print(f"Список: {A} k = {K}")
+print(f"Результат: {solution(K, A, len(A))}")

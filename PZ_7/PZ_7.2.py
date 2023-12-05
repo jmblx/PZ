@@ -9,6 +9,11 @@ def solution(stroka: str) -> str:
     splited = stroka.split("\\")
     return splited[0] if len(splited) != 1 else "\\"
 
+def test(src):
+    print(f"Cтрока полного пути к файлу: {src}",
+          "Результат:",
+          solution(src)
+          )
 
-print(solution(r"dsa\dsa1\sadqwwq\ewqda"))
-print(solution(r"dsadqwe"))
+test(r"dsa\dsa1\sadqwwq\ewqda")
+test(r"dsadqwe")
