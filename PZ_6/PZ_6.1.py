@@ -7,8 +7,7 @@
 
 def solution(A, N) -> None:
 
-    for i in range(0, N, 2):
-        print(A[i])
+    print(A[::2])
 
 
 A = [0, 2, 4, 6, 8, 10]
