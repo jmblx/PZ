@@ -7,6 +7,8 @@
 def solution(S: str):
     return " ".join(S)
 
-test_str = 'qwertqwert'
 
-print(f"Исходная строка:\n {test_str}\n Результат:\n {solution(test_str)}")
+# test_str = 'qwertqwert'
+test_str = str(input('введите непустую строку, между символами которой нужно вставить пробелы:\n'))
+
+print(f"Исходная строка:\n {test_str}\nРезультат:\n {solution(test_str)}")

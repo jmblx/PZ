@@ -10,7 +10,7 @@ def solution(stroka: str) -> str:
     return splited[0] if len(splited) != 1 else "\\"
 
 def test(src):
-    print(f"Cтрока полного пути к файлу: {src}",
+    print(f"Cтрока полного пути к файлу: {src}\n",
           "Результат:",
           solution(src)
           )
