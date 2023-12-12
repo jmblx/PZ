@@ -13,7 +13,7 @@ def test(src):
     print(f"Cтрока полного пути к файлу: {src}\n",
           "Результат:",
           solution(src)
-          )
+    )
 
 test(r"dsa\dsa1\sadqwwq\ewqda")
 test(r"dsadqwe")
