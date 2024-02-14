@@ -8,9 +8,12 @@ import string
 
 with open("text18-11.txt", "r", encoding="utf-16") as f:
     texts = f.read()
-
 print(texts)
 
 counter = sum(list(1 for i in texts if i in set(string.punctuation)))
-
 print(counter)
+
+shortest_line = min(texts.splitlines(), key=len)
+
+with open("shortest_line.txt", "w") as f:
+    f.write(shortest_line)
