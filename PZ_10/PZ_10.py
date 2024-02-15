@@ -11,28 +11,18 @@
 3. в каких магазинах можно приобрести мясо и молоко.
 """
 
+store_products = {
+    "Магнит": {"молоко", "соль", "сахар", "печенье", "сыр"},
+    "Пятерочка": {"мясо", "молоко", "сыр"},
+    "Перекресток": {"молоко", "творог", "сыр", "сахар", "печенье"},
+    "Лента": {"печенье", "молоко", "сыр"}
+}
 
-def check_items(shop_values, items):
-    return all(item in shop_values for item in items)
+first_task = [store for store, products in store_products.items() if "соль" not in products]
 
-def cant_buy(items, **kwargs):
-    res = [shop for shop, shop_values in kwargs.items() if not check_items(shop_values, items)]
-    print(res)
+second_task_products = {"молоко", "печенье", "сыр"}
+second_task = [store for store, items in store_products.items() if items & second_task_products == second_task_products]
 
-def can_buy(items, **kwargs):
-    res = [shop for shop, shop_values in kwargs.items() if check_items(shop_values, items)]
-    print(res)
+third_task = [store for store, products in store_products.items() if {"мясо", "молоко"}.issubset(products)]
 
-magnit = "молоко, соль, сахар, печенье, сыр".split(", ")
-pyat = "мясо, молоко, сыр".split(", ")
-perekrestok = "молоко, творог, сыр, сахар, печенье".split(", ")
-lenta = "печенье, молоко, сыр".split(", ")
-
-cant_buy(
-    ["соль"], magnit=magnit, pyat=pyat,
-    perekrestok=perekrestok, lenta=lenta
-)
-
-can_buy(["молоко", "печенье", "сыр"], magnit=magnit, pyat=pyat, perekrestok=perekrestok, lenta=lenta)
-
-can_buy(["молоко", "мясо"], magnit=magnit, pyat=pyat, perekrestok=perekrestok, lenta=lenta)
+print(f"1) {first_task}\n2){second_task}\n3){third_task}")

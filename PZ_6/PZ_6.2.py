@@ -17,7 +17,7 @@ def solution(K, A: list, N: int):
     return best
 
 
-A = [4, 5.6, 6.5, 7.25, 10, 15.4]
+A = [4, 5.6, 6.5, 4.25, 10, 15.4]
 K = 7
 print(f"Список: {A} k = {K}")
 print(f"Результат: {solution(K, A, len(A))}")
