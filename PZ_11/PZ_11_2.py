@@ -11,7 +11,7 @@ with open("text18-11.txt", "r", encoding="utf-16") as f:
 print(texts)
 
 counter = sum(list(1 for i in texts if i in set(string.punctuation)))
-print(counter)
+print(f"Количество знаков препинания: {counter}")
 
 shortest_line = min(texts.splitlines(), key=len)
 
