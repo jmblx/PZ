@@ -26,3 +26,8 @@ with sq.connect("sql.db") as con:
             (3, "ЕГОР УБИЙЦА", 21, 40, 174774)
         ]
     )
+
+    cur.execute("SELECT * FROM users WHERE score >= 1000 ORDER BY score DESC")
+    result = cur.fetchall()
+    print(result)
+

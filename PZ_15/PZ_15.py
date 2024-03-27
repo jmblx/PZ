@@ -32,3 +32,11 @@ payment_amount REAL
             (1, "Светличный", "пер. Халтуринский 28/40", 174.7, 20.31, "Безнал.", 321.32),
         ]
     )
+
+    cur.execute(
+        """
+        SELECT * FROM expenses WHERE lastname = 'Светличный'
+        """
+    )
+    res = cur.fetchall()
+    print(f"Все оплаты, Светличного:\n{res}")
