@@ -9,6 +9,7 @@ import sqlite3 as sq
 
 with sq.connect("sql.db") as con:
     cur = con.cursor()
+    cur.execute("DROP TABLE IF EXISTS expenses")
     cur.execute(
 '''
 CREATE TABLE IF NOT EXISTS expenses (
@@ -23,5 +24,11 @@ payment_amount REAL
 '''
 )
 
-
-
+    cur.executemany(
+        """
+        INSERT INTO expenses VALUES (?, ?, ?, ?, ?, ?, ?)
+        """,
+        [
+            (1, "Светличный", "пер. Халтуринский 28/40", 174.7, 20.31, "Безнал.", 321.32),
+        ]
+    )
