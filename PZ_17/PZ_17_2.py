@@ -33,7 +33,7 @@ def sort_numbers():
         messagebox.showerror("Input Error", "Введите все числа в правильном виде.")
 
 app = tk.Tk()
-app.title("pz 6_2")
+app.title("pz 5_2 Сортировка")
 
 tk.Label(app, text="Set 1:").grid(row=0, column=0, padx=5, pady=5)
 tk.Label(app, text="A1:").grid(row=1, column=0, padx=5, pady=5)
