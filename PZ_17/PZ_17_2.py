@@ -30,10 +30,10 @@ def sort_numbers():
         result1_var.set(f"Sorted Set 1: {sorted1}")
         result2_var.set(f"Sorted Set 2: {sorted2}")
     except ValueError:
-        messagebox.showerror("Input Error", "Please enter valid numbers.")
+        messagebox.showerror("Input Error", "Введите все числа в правильном виде.")
 
 app = tk.Tk()
-app.title("SortInc3 Function")
+app.title("pz 6_2")
 
 tk.Label(app, text="Set 1:").grid(row=0, column=0, padx=5, pady=5)
 tk.Label(app, text="A1:").grid(row=1, column=0, padx=5, pady=5)
