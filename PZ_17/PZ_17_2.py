@@ -1,7 +1,16 @@
+'''
+Разработать программу с применением пакета tk, взяв в качестве условия одну
+любую задачу из ПЗ №№ 2 – 9.
+Я выбрал 5.2   Описать функцию SortInc3(А, В, С), меняющую содержимое переменных А, В, С
+таким образом, чтобы их значения оказались упорядоченными по возрастанию (А,
+В, С - вещественные параметры, являющиеся одновременно входными и
+выходными). С помощью этой функции упорядочить по возрастанию два данных
+набора из трех чисел: (Ai, Bi, Ci) и (A2, В2, C2).
+'''
 import tkinter as tk
 from tkinter import messagebox
 
-def SortInc3(A: float, B: float, C: float) -> tuple:
+def sort_inc3(A: float, B: float, C: float) -> tuple:
     arr = [A, B, C]
     sorted_arr = []
     num = float('infinity')
@@ -24,8 +33,8 @@ def sort_numbers():
         B2 = float(entry_B2.get())
         C2 = float(entry_C2.get())
         
-        sorted1 = SortInc3(A1, B1, C1)
-        sorted2 = SortInc3(A2, B2, C2)
+        sorted1 = sort_inc3(A1, B1, C1)
+        sorted2 = sort_inc3(A2, B2, C2)
         
         result1_var.set(f"Sorted Set 1: {sorted1}")
         result2_var.set(f"Sorted Set 2: {sorted2}")
